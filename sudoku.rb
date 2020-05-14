@@ -1,4 +1,5 @@
 require_relative "board"
+require 'byebug'
 
 class SudokuGame
   def self.from_file(filename)
@@ -15,7 +16,7 @@ class SudokuGame
     until pos && valid_pos?(pos)
       puts "Please enter a position on the board (e.g., '3,4')"
       print "> "
-
+      #debugger
       begin
         pos = parse_pos(gets.chomp)
       rescue
